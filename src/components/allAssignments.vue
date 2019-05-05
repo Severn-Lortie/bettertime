@@ -35,7 +35,7 @@ body {
                 <v-list-tile avatar class="white radius" @click="">
                     <v-list-tile-avatar class="white--text" :color="task.color">
                         <div class="product-sans heading">
-                            {{task.subject[0] | capatalize}}
+                            {{task.subject[0].toUpperCase()}}
                         </div>
                     </v-list-tile-avatar>
 
