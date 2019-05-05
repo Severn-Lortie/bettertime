@@ -93,7 +93,7 @@ export default {
             let dayNumber = this.date.getDay();
 
             if (dayNumber > 5 || dayNumber == 0) {
-                return `It's the Weekend!`
+                return `It's the weekend!`
             }
 
             return `Today is: day ${this.schDay}`;
