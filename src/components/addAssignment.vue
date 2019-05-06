@@ -72,11 +72,14 @@ export default {
 
             this.forumData.color = this.subjectColors[colorPos];
 
+            // Check for Null values once populated
+
             this.addAssignment({
                 name: this.forumData.name,
-                notes: this.forumData.notes,
-                subject: this.forumData.subject.name,
-                due: daysUntilDue,
+                notes: this.forumData.notes || "No notes for this assignment.",
+                subject: this.forumData.subject.name || "No Subject.",
+                dueDate: this.forumData.due || "",
+                due: daysUntilDue || "∞",
                 color: this.forumData.color
             });
         },

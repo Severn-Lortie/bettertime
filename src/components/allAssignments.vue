@@ -57,19 +57,16 @@ body {
 </template>
 
 <script>
-import {
-    mapState
-} from "vuex";
-import {
-    mapMutations
-} from "vuex";
+import {mapState} from "vuex";
+import {mapMutations} from "vuex";
+import time from '../helpers/time.js';
 
 export default {
     data() {
         return {};
     },
     methods: {
-        ...mapMutations(["deleteAssignment"]),
+        ...mapMutations(["deleteAssignment", "updateAssignmentDate"]),
 
         handleComplete(index) {
             this.deleteAssignment(index);
@@ -87,12 +84,19 @@ export default {
             return false;
         }
     },
-    filters: {
-        capatalize(value) {
-            if (!value) return
-            value = value.toString()
-            return value.charAt(0).toUpperCase() + value.slice(1)
-        }
+
+    // Update all due dates
+    created() {
+        this.assignments.forEach((assignment) => {
+            if (!assignment.dueDate == "") {
+                //Mutator to sync with local storage
+                let data = {
+                    newDue: time.difference(assignment.dueDate),
+                    assignment
+                }
+                this.updateAssignmentDate(data);
+            }
+        })
     }
 };
 </script>
