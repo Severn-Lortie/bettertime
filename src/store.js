@@ -60,7 +60,6 @@ export default new Vuex.Store({
       let index = state.assignments.indexOf(data.assignment);
       //Change the due property
       state.assignments[index].due = data.newDue;
-
     }
   },
 });

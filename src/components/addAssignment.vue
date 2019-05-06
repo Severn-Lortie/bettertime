@@ -13,12 +13,12 @@
 <div class='text-xs-center'>
     <v-dialog v-model='displayDialog' width='600' :scrollable='true' :min-width='600'>
 
-        <v-card class='fill-height'>
+        <v-card class='fill-height justify-center'>
             <v-container>
                 <v-card-title class='product-sans heading'>
                     <v-icon color='amber'>edit</v-icon><span class='ml-2 mr-2'>Add an Assignment or Test</span>
                 </v-card-title>
-                <v-card-text>
+                <v-card-text class="justify-center align-center">
                     <v-form>
                         <v-text-field color='amber' v-model='forumData.name' prepend-icon='description' label='Name'></v-text-field>
                         <v-text-field color='amber' v-model='forumData.notes' prepend-icon='notes' label='Additonal Notes/Intructions'></v-text-field>
