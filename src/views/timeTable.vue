@@ -120,9 +120,9 @@ export default {
                 let teacher = this.formData.teacher;
                 let period = this.formData.period;
                 this.subjects.push({
-                    name,
-                    teacher,
-                    period
+                    name: name || "",
+                    teacher: teacher || "",
+                    period: period || ""
                 })
                 this.formData = {};
                 this.dialog = false;
